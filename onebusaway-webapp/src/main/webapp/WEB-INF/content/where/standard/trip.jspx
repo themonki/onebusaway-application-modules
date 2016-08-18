@@ -25,7 +25,7 @@
  - <s:property value="result.trip.tripHeadsign" /> - <s:text name="trip.Trip"/> <jsp:text> </jsp:text> <s:property
     value="result.trip.id" /></title>
 <link rel="stylesheet" type="text/css" media="all" href="${oba:resource('/WEB-INF/css/where-standard-trip.css')}"/>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"><jsp:text></jsp:text></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"><jsp:text></jsp:text></script>
 <script type="text/javascript" src="${oba:url('/config.action')}"><jsp:text></jsp:text></script>
 <script type="text/javascript" src="${oba:resource('CommonResources')}"><jsp:text></jsp:text></script>
 <script type="text/javascript" src="${oba:resource('/js/oba-where-standard-trip.js')}"><jsp:text></jsp:text></script>
@@ -82,6 +82,22 @@
                 <tr>
                     <td><img src="${oba:resource('collection-entry:Map:SelectionCircle36.png')}" /></td>
                     <td><s:text name="trip.Your_selected_stop"/></td>
+                </tr>
+                </s:if>
+                <s:if test="vehicleId != null">
+                <tr>
+                    <td><img src="${oba:resource('collection-entry:Map:Marker.png')}" /></td>
+                    <td><s:text name="trip.Vehicle_position"/></td>
+                </tr>
+                </s:if>
+                <s:if test="trip.shapeId != null">
+                <tr>
+                	<td><img src="${oba:resource('collection-entry:Map:RouteStart.png')}" /></td>
+                	<td><s:text name="trip.Route_Start"/></td>
+                </tr>
+                <tr>
+                	<td><img src="${oba:resource('collection-entry:Map:RouteEnd.png')}" /></td>
+                	<td><s:text name="trip.Route_End"/></td>
                 </tr>
                 </s:if>
             </tbody>

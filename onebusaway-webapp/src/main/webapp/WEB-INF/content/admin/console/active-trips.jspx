@@ -42,10 +42,12 @@
 </s:if>
 <s:else>
     <h2>Pick a trip:</h2>
+    <p>Total Trips: <s:property value="trips.size"/></p>
     <ul>
         <s:iterator value="trips">
-            <s:url var="url" action="active-trip">
-
+            <s:url namespace="/where/standard" var="url" action="trip">
+				<s:param name="id" value="trip.id" />
+				<s:param name="serviceDate" value="serviceDate"/>
             </s:url>
             <li><s:a href="%{url}">
                 <oba:routeName value="trip"/><jsp:text> - </jsp:text><s:property value="trip.tripHeadsign"/>

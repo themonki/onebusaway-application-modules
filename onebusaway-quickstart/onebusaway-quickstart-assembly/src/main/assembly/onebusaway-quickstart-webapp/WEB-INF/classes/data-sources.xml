@@ -75,6 +75,8 @@
     <property name="properties">
       <props>
         <prop key="webapp_template_override">/WEB-INF/custom-header.jspx</prop>
+        <prop key="webapp_index_override">/WEB-INF/custom-index.jspx</prop>
+        <prop key="no_registration">true</prop>
       </props>
     </property>
   </bean>

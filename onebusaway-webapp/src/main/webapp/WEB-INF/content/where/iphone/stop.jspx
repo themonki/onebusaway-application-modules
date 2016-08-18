@@ -61,11 +61,23 @@
         <s:set name="arrivalsStatusLabelStyle" value="arrivalsAndDeparturesPresentation.getStatusLabelStyle(top)" />
         <tr class="arrivalsRow">
             <jsp:element name="td">
+              <jsp:attribute name="style">
+              <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+            	border-radius: 20px 5px 20px; 
+				background-color: #<s:property value="#route.color"/>;
+            	color: #<s:property value="#route.textColor"/>!important;
+              </s:if>
+              </jsp:attribute>
         	  <jsp:attribute name="class">arrivalsRouteEntry<s:if test="arrivalsAndDeparturesPresentation.isLongRouteName(#route)"> arrivalsRouteLongNameEntry</s:if></jsp:attribute>
+              <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+              <s:set var="textColor">
+              	color: #<s:property value="#route.textColor"/>!important;
+              </s:set>
+              </s:if>
               <s:url var="url" includeParams="get">
                   <s:param name="route" value="#route.id" />
               </s:url>
-              <s:a href="%{url}">
+              <s:a href="%{url}" cssStyle="%{textColor}">
             	<oba:routeName value="trip"/>
               </s:a>
             </jsp:element>

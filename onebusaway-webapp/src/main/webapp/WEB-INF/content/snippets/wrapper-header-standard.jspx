@@ -51,26 +51,26 @@
   <a href="${pageContext.request.contextPath}/">Home</a>
 </jsp:element>
 
-<jsp:element name="li">
-  <jsp:attribute name="class">
-    <s:if test="#uri.startsWith(#contextPath + '/p/Tools')">current</s:if>
-  </jsp:attribute>
-  <a href="${pageContext.request.contextPath}/p/Tools.action">Tools</a>
-</jsp:element>
+<!-- <jsp:element name="li"> -->
+<!--   <jsp:attribute name="class"> -->
+<!--     <s:if test="#uri.startsWith(#contextPath + '/p/Tools')">current</s:if> -->
+<!--   </jsp:attribute> -->
+<!--   <a href="${pageContext.request.contextPath}/p/Tools.action">Tools</a> -->
+<!-- </jsp:element> -->
 
-<jsp:element name="li">
-  <jsp:attribute name="class">
-    <s:if test="#uri.startsWith(#contextPath + '/p/Research')">current</s:if>
-  </jsp:attribute>
-  <a href="${pageContext.request.contextPath}/p/Research.action">Research</a>
-</jsp:element>
+<!-- <jsp:element name="li">  -->
+<!--   <jsp:attribute name="class">  -->
+<!--     <s:if test="#uri.startsWith(#contextPath + '/p/Research')">current</s:if>  -->
+<!--   </jsp:attribute>  -->
+<!--   <a href="${pageContext.request.contextPath}/p/Research.action">Research</a>  -->
+<!-- </jsp:element>  -->
 
-<jsp:element name="li">
-  <jsp:attribute name="class">
-    <s:if test="#uri.startsWith(#contextPath + '/p/ContactUs')">current</s:if>
-  </jsp:attribute>
-  <a href="${pageContext.request.contextPath}/p/ContactUs.action">Contact Us</a>
-</jsp:element>
+<!-- <jsp:element name="li">  -->
+<!--   <jsp:attribute name="class">  -->
+<!--     <s:if test="#uri.startsWith(#contextPath + '/p/ContactUs')">current</s:if>  -->
+<!--   </jsp:attribute> - -->
+<!--   <a href="${pageContext.request.contextPath}/p/ContactUs.action">Contact Us</a>  -->
+<!-- </jsp:element>  -->
 
 <jsp:element name="li">
   <jsp:attribute name="class">
@@ -90,22 +90,22 @@
 </div>
 </div>
 
-<div id="feedback">
-  <a href="http://onebusaway.ideascale.com">
-    <img src="${oba:resource('/images/Feedback.png')}"/>
-  </a>
-</div>
+<!-- <div id="feedback"> -->
+<!--   <a href="http://onebusaway.ideascale.com"> -->
+<!--     <img src="${oba:resource('/images/Feedback.png')}"/>-->
+<!--   </a> -->
+<!-- </div> -->
 
 <!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2423527-7");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
+<!-- <script type="text/javascript"> -->
+<!-- var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); -->
+<!-- document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); -->
+<!-- </script> -->
+<!-- <script type="text/javascript"> -->
+<!-- var pageTracker = _gat._getTracker("UA-2423527-7"); -->
+<!-- pageTracker._initData(); -->
+<!-- pageTracker._trackPageview(); -->
+<!-- </script> -->
 
 </body>
 	

@@ -1,0 +1,103 @@
+<!--
+
+    Copyright (C) 2011 Brian Ferris <bdferris@onebusaway.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:s="/struts-tags"
+     xmlns:wiki="/oba-wiki-tags">
+<jsp:directive.page contentType="text/html" />
+<head>
+<title>OneBusAway - Aplicación para Android</title>
+<script type="text/javascript">
+	window.onload=function(){
+	document.getElementById('pkey').addEventListener('click', function(){
+		var range = document.createRange();
+		var selection = window.getSelection();
+		range.selectNodeContents(document.getElementById('pkey'));
+		
+		selection.removeAllRanges();
+		selection.addRange(range);
+	});
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<h2>Aplicación para Android</h2>
+		
+		<p class="screen-app">
+			<img src="../images/Android/pantalla1.png" />
+		</p>		
+		<p>
+			OneBusAway tiene una aplicación oficial para clientes Andriod, que fue desarrollada por 
+			<a href="http://www.joulespersecond.com/#Main" >Paul Watss</a> de Seattle. La información del 
+			<a href="where/standard/agencies.action?request_locale=${locale}&amp;locale=${locale}">SITM-MIO</a>
+			actualmente no se encuentra incluida en las bases de datos por defecto de la aplicación, pero es posible 
+			configurarla para tener los datos. Para ello debe realizar los siguientes pasos:
+		</p>
+		<ul>
+			<li>
+				<p>Instale la aplicación oficial de OneBusAway buscandola en la <a href="https://play.google.com/store" >Google Play de Android </a>
+				o haciendo clic en en la siguiente imagen:</p>
+				<a href="https://play.google.com/store/apps/details?id=com.joulespersecond.seattlebusbot">
+					<img alt="Obtenla en Google Play" class="app-logo" src="https://play.google.com/intl/en_us/badges/images/apps/es-419-play-badge.png" />
+				</a>
+			</li>
+			<li>
+				<p>
+					Una vez instalada la aplicación debe configurarla dirigiendose al menú en la parte superior izquierda la opción
+					<b>Configuración</b> y luego tocar en <b>Avanzado</b>. Debes seleccionar la opción <b>Servidor API de OneBusAway</b>
+					e introducir el siguiente texto en la ventana que se despliega:
+				</p>
+				<p id="pkey" class='input-api'>
+					software.metrocali.gov.co:8080/api
+				</p>
+			</li>
+		</ul>
+		<p>
+			<b>
+				Esta no es una aplicación que ha sido contruida y mantenida por el SITM-MIO, solamente la información
+		 		de transporte público que verá es proporcionada por el SITM-MIO.
+		 	</b>
+		</p>
+		<p style="clear: both;" class="screen-app">
+			<img src="../images/Android/pantalla2.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/Android/pantalla3.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/Android/pantalla4.png" />
+		</p>
+		<p style="clear: both;" class="screen-app">
+			<img src="../images/Android/pantalla5.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/Android/pantalla6.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/Android/pantalla7.png" />
+		</p>
+		<p style="clear: both;" class="screen-app">
+			<img src="../images/Android/pantalla8.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/Android/pantalla9.png" />
+		</p> 
+	</div>
+</body>
+</html>

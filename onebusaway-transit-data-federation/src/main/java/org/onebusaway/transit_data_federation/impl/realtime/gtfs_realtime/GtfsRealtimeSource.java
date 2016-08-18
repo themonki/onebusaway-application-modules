@@ -17,6 +17,8 @@ package org.onebusaway.transit_data_federation.impl.realtime.gtfs_realtime;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -155,14 +157,17 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
 
   public void setTripUpdatesUrl(URL tripUpdatesUrl) {
     _tripUpdatesUrl = tripUpdatesUrl;
+    authentication(_tripUpdatesUrl);
   }
 
   public void setVehiclePositionsUrl(URL vehiclePositionsUrl) {
     _vehiclePositionsUrl = vehiclePositionsUrl;
+    authentication(_vehiclePositionsUrl);
   }
 
   public void setAlertsUrl(URL alertsUrl) {
     _alertsUrl = alertsUrl;
+    authentication(_alertsUrl);
   }
 
   public void setRefreshInterval(int refreshInterval) {
@@ -196,7 +201,36 @@ public class GtfsRealtimeSource implements MonitoredDataSource {
   public MonitoredResult getMonitoredResult() {
     return _monitoredResult;
   }
-  
+
+  public void authentication(URL u) {
+    String user = null, pass = null;
+    try {
+      final URL url = u;
+      if (url.getUserInfo() != null && !url.getUserInfo().isEmpty()) {
+        user = url.getUserInfo().split(":")[0];
+        pass = url.getUserInfo().split(":")[1];
+      }
+
+      if (user != null && pass != null) {
+        _log.info("Using HTTP basic authentication with " + user);
+        Authenticator.setDefault(new Authenticator() {
+          final String user = url.getUserInfo().split(":")[0];
+          final String pass = url.getUserInfo().split(":")[1];
+
+          @Override
+          protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(user, pass.toCharArray());
+          }
+        });
+      }
+    } catch (ArrayIndexOutOfBoundsException e) {
+      _log.info(e.toString());
+    } catch (Exception e) {
+      _log.info(e.toString());
+    }
+
+  }
+
   @PostConstruct
   public void start() {
     if (_agencyIds.isEmpty()) {

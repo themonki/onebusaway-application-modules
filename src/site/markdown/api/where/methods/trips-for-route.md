@@ -6,7 +6,7 @@ Search for active trips for a specific route.
 
 ## Sample Request
 
-http://api.pugetsound.onebusaway.org/api/where/trips-for-route/1_100224.xml?key=TEST
+http://api.pugetsound.onebusaway.org/api/where/trips-for-route/1_44.xml?key=TEST
 
 ## Sample Response
 
@@ -36,7 +36,7 @@ http://api.pugetsound.onebusaway.org/api/where/trips-for-route/1_100224.xml?key=
   [`<tripStatus/>` elements](../elements/trip-status.html) with full real-time
   information are included in the `<status/>` section for each `<tripDetails/>`
   element.  Defaults to false.
-* includeSchedule - Can be true/false to determine whether full `<schedule/>`
+* includeSchedules - Can be true/false to determine whether full `<schedule/>`
   elements are included in the `<tripDetails/>` element.  Defaults to false.
 * time - by default, the method returns the status of the system right now.  However, the system
   can also be queried at a specific time.  This can be useful for testing.  See [timestamps](../index.html#Timestamps)

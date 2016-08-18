@@ -24,7 +24,7 @@
         WHERE p.stopId.agencyId = :agencyId
         AND :timeFrom &lt;= p.time
         AND p.time &lt; :timeTo
-        GROUP BY p.stopId.id 
+        GROUP BY p.stopId.agencyId, p.stopId.id 
     </query>
     <query name="stopProblemReportSummariesWithStatus" read-only="true">
       SELECT p.stopId, count(*)
@@ -33,7 +33,7 @@
         AND :timeFrom &lt;= p.time
         AND p.time &lt; :timeTo
         AND p.status = :status
-        GROUP BY p.stopId.id 
+        GROUP BY p.stopId.agencyId, p.stopId.id 
     </query>  
     <query name="stopProblemReports" read-only="true">
       SELECT p

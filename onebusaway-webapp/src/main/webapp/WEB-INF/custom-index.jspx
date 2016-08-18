@@ -1,0 +1,141 @@
+<!--
+
+    Copyright (C) 2011 Brian Ferris <bdferris@onebusaway.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:s="/struts-tags"
+     xmlns:wiki="/oba-wiki-tags">
+<jsp:directive.page contentType="text/html" />
+<head>
+<title>OneBusAway</title>
+</head>
+<body>
+	<div class="container">
+		<div class="custom-page-header home-header">
+			<h1 class="tittle">¿Donde está tu MIO?</h1>
+			<h2>
+				En este sitio encontrarás información en tiempo real del <br />
+				transporte público del SITM-MIO de la ciudad de Santiago de Cali.
+			</h2>
+		</div>
+
+		<div class="column-row">
+			<div class="one-third column">
+				<h3>La meta</h3>
+				<p>Con la información programada y en tiempo real de tránsito,
+					puedes saber cuando llegará tu bus, reduciendo tus tiempos de
+					desplazamiento en el transporte público.</p>
+				<p>Con estas aplicaciones se ofrece:</p>
+				<ul>
+					<li>Información en tiempo real para el 
+					<a href="where/standard/agencies.action?request_locale=${locale}&amp;locale=${locale}">SITM-MIO</a>.
+					</li>
+					<li>Información de llegadas en cada parada de bus.</li>
+					<li>Acceso a la información por medio de diferentes
+						dispositivos con conexión a Internet.</li>
+				</ul>
+			</div>
+
+			<div class="one-third column">
+				<h3>Aplicaciones</h3>
+				<p>A continuación te presentamos las aplicaciones disponibles
+					para diferentes dispositivos:</p>
+				<table id="tools">
+					<tbody>
+						<tr>
+							<td class="tool">
+								<div>
+									<a href="where/standard/?request_locale=${locale}&amp;locale=${locale}">
+										<img alt="Tool-Web.png" src="images/Tools/Tool-Web.png" />
+									</a>
+								</div>
+								<div class="toolLabel">
+									<a href="where/standard/?request_locale=${locale}&amp;locale=${locale}">Web</a>
+								</div>
+							</td>
+							<td class="tool">
+								<div>
+									<a href="where/iphone/?request_locale=${locale}&amp;locale=${locale}">
+										<img alt="Tool-MobileWeb.png" src="images/Tools/Tool-MobileWeb.png" />
+									</a>
+								</div>
+								<div class="toolLabel">
+									<a href="where/iphone/?request_locale=${locale}&amp;locale=${locale}">Web Móvil</a>
+								</div>
+							</td>
+							<td class="tool">
+								<div>
+									<a href="where/text/?request_locale=${locale}&amp;locale=${locale}">
+										<img alt="Tool-MobileWeb.png" src="images/Tools/Tool-MobileWeb.png" />
+									</a>
+								</div>
+								<div class="toolLabel">
+									<a
+										href="where/text/?request_locale=${locale}&amp;locale=${locale}">Texto</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="tool">
+								<div>
+									<a href="p/Tools_Android.action">
+										<img alt="Tool-Android.png" src="images/Tools/Tool-Android.png" />
+									</a>
+								</div>
+								<div class="toolLabel">
+									<a href="p/Tools_Android.action">Android</a>
+								</div>
+							</td>
+							<td class="tool">
+								<div>
+									<a href="p/Tools_IPhone.action">
+										<img alt="Tool-iPhone.png" src="images/Tools/Tool-iPhone.png" />
+									</a>
+								</div>
+								<div class="toolLabel">
+									<a href="p/Tools_IPhone.action">iPhone</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="one-third column">
+				<h3>Sobre el proyecto</h3>
+				<p>
+					OneBusAway provee una variedad de 
+					<a href="https://github.com/OneBusAway/onebusaway/wiki" >aplicaciones de código abierto</a>
+					diseñadas para trabajar con datos de tránsito abierto como <a href="https://developers.google.com/transit/gtfs/">GTFS</a>
+					y <a href="https://developers.google.com/transit/gtfs-realtime/">GTFS-realtime</a>. 
+					Todo el software desarrollado es Código Abierto, por lo que puede ser reutilizado para 
+					construir nuevas herramientas a partir de esta.
+				</p>
+				<p>
+					Esta es la <a href="https://github.com/OneBusAway/onebusaway-application-modules/wiki" >OBA Application Suite</a>, 
+					la cual provee una gran variedad de herramientas e interfaces para acceder a la información de tránsito en tiempo real.
+					Para mayor información:
+				</p>
+				<p><a href="https://github.com/OneBusAway/onebusaway-application-modules/wiki">Mira la página del proyecto en GitHub</a></p>
+				<p><a href="http://onebusaway.org/">Visita la página de la organización</a></p>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

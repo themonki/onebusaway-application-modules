@@ -137,6 +137,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  @Transactional
   public User getUserForId(int userId) {
     return _userDao.getUserForId(userId);
   }

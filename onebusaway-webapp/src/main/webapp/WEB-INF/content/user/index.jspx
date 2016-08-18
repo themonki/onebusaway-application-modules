@@ -23,13 +23,13 @@
 <meta name="gwt:property" content="locale=${locale}"/>
 <title><s:text name="user.UserInfo" /></title>
   <script type="text/javascript"                                  
-          src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA1R_R0bUhLYRwbQFpKHVowhR6ggDNEO1rwvdlk5egWeAHsl3o5xT2ki4Fn-LXLHIrJfb8VmKQeIMh5g"><jsp:text></jsp:text></script>
+          src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA1R_R0bUhLYRwbQFpKHVowhR6ggDNEO1rwvdlk5egWeAHsl3o5xT2ki4Fn-LXLHIrJfb8VmKQeIMh5g"><jsp:text></jsp:text></script>
   <script type="text/javascript"
           src="org.onebusaway.webapp.gwt.SearchLocationLibrary.nocache.js"><jsp:text></jsp:text></script>
 
 </head>
 <body>
-
+<s:set var="no_register" value="#configuration['no_registration']"/>
 <s:push value="user">
 <h2><s:text name="user.UserInfo" /></h2>
 
@@ -91,7 +91,7 @@
 	 	  <p><a href="../where/standard/bookmarks.action"><s:text name="user.CheckOutYourBookmarks" /></a></p>
 	 	</div>
 	  </s:if>
-
+	  <s:if test="! #no_register">
 	  <div class="section">
 	  
 	  <h4>Phone Numbers</h4>
@@ -115,9 +115,10 @@
 	  </form>
 	  
 	  </div>
-
+	  </s:if>
 	</s:if>
 	<s:else>
+	  <s:if test="! #no_register">
 	  <div class="section">	
         <h4>Register Your Account</h4>
         <s:url var="registrationUrl" namespace="/" action="login">
@@ -130,6 +131,7 @@
           <li>More features to come</li>
         </ul>
       </div>
+      </s:if>
 	</s:else>
 
 	<s:if test="admin">

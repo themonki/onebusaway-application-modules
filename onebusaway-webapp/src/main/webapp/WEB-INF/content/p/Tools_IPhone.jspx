@@ -1,0 +1,104 @@
+<!--
+
+    Copyright (C) 2011 Brian Ferris <bdferris@onebusaway.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:s="/struts-tags"
+     xmlns:wiki="/oba-wiki-tags">
+<jsp:directive.page contentType="text/html" />
+<head>
+<title>OneBusAway - Aplicación para IPhone</title>
+<script type="text/javascript">
+	window.onload=function(){
+	document.getElementById('pkey').addEventListener('click', function(){
+		var range = document.createRange();
+		var selection = window.getSelection();
+		range.selectNodeContents(document.getElementById('pkey'));
+		
+		selection.removeAllRanges();
+		selection.addRange(range);
+	});
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<h2>Aplicación para IPhone</h2>
+		
+		<p class="screen-app">
+			<img src="../images/IPhone/pantalla1.png" />
+		</p>
+		<p>
+			OneBusAway tiene una aplicación para clientes IPhone. La información del 
+			<a href="where/standard/agencies.action?request_locale=${locale}&amp;locale=${locale}">SITM-MIO</a>
+			actualmente no se encuentra incluida en las bases de datos por defecto de la aplicación, pero es posible 
+			configurarla para tener los datos. Para ello debe realizar los siguientes pasos:
+		</p>
+		<ul>
+			<li>
+				<p>Instale la aplicación oficial de OneBusAway buscandola en la <b>Apple App Store</b>
+				o haciendo clic en en la siguiente imagen:</p>
+				<a href="https://itunes.apple.com/us/app/onebusaway/id329380089">
+					<img alt="Obtenla en el App Store" class="app-logo" 
+					src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store-es.svg" />
+				</a>
+			</li>
+			<li>
+				<p>
+					Una vez instalada la aplicación debe configurarla dirigiendose a <b>Info</b> en el menú de la parte inferior,
+					seleccionar la opción <b>Region</b>, posiblemente esta pantalla se le mostrará automáticamente cuando abra la
+					aplicación por primera vez. Luego debe seleccionar el botón <b>+</b> en la parte superior derecha para poder
+					diligenciar los siguientes datos:
+				</p>
+			</li>
+			<li>
+				<p>
+					En <b>Base URL</b> debes pegar el siguiente texto:
+				</p>
+			</li>
+				<p id="pkey" class='input-api'>
+					http://software.metrocali.gov.co:8080/api/
+				</p>
+			<li>
+				<p>
+					En <b>Name</b> puedes colocar un texto como <b>MIO (Cali - Colombia)</b> o el que tu prefieras. Luego activa las
+					opciones <b>Supports OBA Realtime APIs</b> y <b>Is Active</b>. Por último en la opción <b>Contact Email</b> te
+					recomendamos ingresar el correo <b>software@metrocali.gov.co</b>.
+				</p>
+			</li>
+		</ul>
+		<p>
+			<b>
+				Esta no es una aplicación que ha sido contruida y mantenida por el SITM-MIO, solamente la información
+		 		de transporte público que verá es proporcionada por el SITM-MIO.
+		 	</b>
+		</p>
+		<p style="clear: both;" class="screen-app">
+			<img src="../images/IPhone/pantalla2.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/IPhone/pantalla3.png" />
+		</p>
+		<p class="screen-app">
+			<img src="../images/IPhone/pantalla4.png" />
+		</p>
+		<p style="clear: both;" class="screen-app">
+			<img src="../images/IPhone/pantalla5.png" />
+		</p>
+	</div>
+</body>
+</html>

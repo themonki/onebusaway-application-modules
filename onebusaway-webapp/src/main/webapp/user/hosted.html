@@ -258,7 +258,7 @@ gwtOnLoad = function(errFn, modName, modBase){
       } catch (e) {
       }
     }
-    loadIframe("http://gwt.google.com/missing-plugin");
+    loadIframe("https://gwt.google.com/missing-plugin");
   } else {
     if (plugin.connect(url, topWin.__gwt_SessionID, $hosted, $moduleName,
         $hostedHtmlVersion)) {
@@ -274,7 +274,7 @@ gwtOnLoad = function(errFn, modName, modBase){
         errFn(modName);
       } else {
         alert("Plugin failed to connect to hosted mode server at " + $hosted);
-        loadIframe("http://code.google.com/p/google-web-toolkit/wiki/TroubleshootingOOPHM");
+        loadIframe("https://code.google.com/p/google-web-toolkit/wiki/TroubleshootingOOPHM");
       }
     }
   }

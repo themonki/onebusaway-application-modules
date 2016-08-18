@@ -48,7 +48,7 @@
 </script>
 </head>
 <body>
-
+<s:set var="no_register" value="#configuration['no_registration']"/>
 <s:if test="mode == 'registration'">
 <h2>Register Your Account</h2>
 </s:if>
@@ -70,9 +70,11 @@
 <table>
   <tr>
     <td>
+<s:if test="! #no_register">
       <div id="login_widget">
         <!-- Content will be supplied by the GWT LoginWidget -->
       </div>
+</s:if>
     </td>
     <td>
       <h4>Simple Login</h4>
@@ -87,6 +89,7 @@
   </tr>
 </table>
 
+<s:if test="! #no_register">
 <h3>"Where do I type my username and password?"</h3>
 
 <p>If you're like us, you probably have accounts for websites all over the web, including some of the popular
@@ -107,7 +110,7 @@ existing username and password.  Then you'll be redirected back here.</p>
 <p>We don't share any information about you or your usage of OneBusAway with any of the login providers listed above.
 We also don't request any information other than your authenticated user id from any of the listed login providers.
 Your privacy is important to us and we'll do our best to protect your private information.</p>
-
+</s:if>
 </s:if>
 <s:else>
 

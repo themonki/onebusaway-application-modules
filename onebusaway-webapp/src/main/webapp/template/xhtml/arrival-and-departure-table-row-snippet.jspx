@@ -26,31 +26,45 @@
     <s:set var="excludeOrderLinks"
         value="parameters.excludeOrderLinks == true" />
     <s:set var="excludeTripLinks"
-        value="parameters.excludeTripLinks == true" />        
+        value="parameters.excludeTripLinks == true" />
 
     <s:push value="parameters.arrivalAndDeparture">
 
         <s:set name="route" value="trip.route" />
         <s:set name="arrivalsStatusLabelStyle"
             value="#presentation.getStatusLabelStyle(top)" />
-
         <jsp:element name="tr">
             <jsp:attribute name="id">
                 <s:property value="#presentation.getMinutesElementId(top)"/>
             </jsp:attribute>
             <jsp:attribute name="class">arrivalsRow</jsp:attribute>
             <jsp:element name="td">
+              <jsp:attribute name="style">
+              <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+            	border-radius: 20px 5px 40px; 
+				background-color: #<s:property value="#route.color"/>;
+            	color: #<s:property value="#route.textColor"/>!important;
+            	<s:if test="#excludeOrderLinks">
+            		padding-left: 15px;
+            	</s:if>
+              </s:if>
+              </jsp:attribute>
         	  <jsp:attribute name="class">arrivalsRouteEntry<s:if
                         test="isLongRouteName(#route)"> arrivalsRouteLongNameEntry</s:if>
               </jsp:attribute>
               <s:if test="#excludeOrderLinks">
                 <oba:routeName value="trip" />
               </s:if>
-              <s:else>  
+              <s:else>
+              <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+	              <s:set var="textColor">
+	              	color: #<s:property value="#route.textColor"/>!important;
+	              </s:set>
+              </s:if>
               <s:url var="url" includeParams="get">
                   <s:param name="route" value="#route.id" />
               </s:url>
-              <s:a href="%{url}">
+              <s:a href="%{url}" cssStyle="%{textColor}">
             	<oba:routeName value="trip" />
               </s:a>
               </s:else>

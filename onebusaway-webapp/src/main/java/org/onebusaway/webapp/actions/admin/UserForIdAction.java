@@ -15,6 +15,8 @@
  */
 package org.onebusaway.webapp.actions.admin;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.onebusaway.users.client.model.UserBean;
@@ -52,6 +54,8 @@ public class UserForIdAction extends ActionSupport implements
   }
 
   @Override
+  @Actions( {
+      @Action(value = "/admin/user-for-id")})
   public String execute() {
 
     User user = _userService.getUserForId(_id);

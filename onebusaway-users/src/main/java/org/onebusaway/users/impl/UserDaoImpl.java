@@ -106,6 +106,7 @@ class UserDaoImpl implements UserDao {
     });  
   }
 
+  @Transactional
   @Override
   public User getUserForId(int id) {
     return (User) _template.get(User.class, id);

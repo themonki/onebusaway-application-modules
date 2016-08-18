@@ -1,0 +1,233 @@
+/**
+ * Copyright (C) 2011 Brian Ferris <bdferris@onebusaway.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+img#headerLogo {
+	position: relative;
+	top: 5px;
+	width: 35px;
+    height: 100%;
+}
+
+.contentHeader{
+	
+}
+
+/****
+ * Language selection
+ ****/
+
+.ul-flag {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.ul-flag .li-flag {
+	display: block;
+	position: relative;
+	float: left;
+/* 	border: 1px solid #000 */
+}
+
+.li-flag .ul-flag {
+	display: none;
+}
+
+.ul-flag .li-flag a {
+	display: block;
+/* 	background: #000; */
+/* 	padding: 5px 10px 5px 10px; */
+	text-decoration: none;
+	white-space: nowrap;
+/* 	color: #fff; */
+}
+
+.ul-flag .li-flag a:hover {
+	/**background: #f00; **/
+}
+
+.li-flag:hover .ul-flag {
+	display: block;
+	position: absolute;
+}
+
+.li-flag:hover .li-flag {
+	float: none;
+}
+
+.li-flag:hover a {
+/* 	background: #f00; */
+	background: #ffffff;
+}
+
+.li-flag:hover .li-flag a:hover {
+/* 	background: #000; */
+	background: #78AA36;
+	color: #fff;
+}
+
+.drop-nav .li-flag .ul-flag .li-flag {
+	border-top: 0px;
+}
+
+/* Custom Index */
+
+div.home-header {
+    background: url(images/Logo.png) no-repeat scroll 100% bottom transparent;
+}
+
+div.custom-page-header {
+    width: 100%;
+    position: relative;
+    margin: 0 0 31px;
+    padding: 36px 0 27px;
+    border-bottom: 5px solid rgb(238,238,238);
+    clear: both;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+div.custom-page-header h1{
+    display: block;
+    font-size: 79px !important;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: -3px;
+    margin: 0;
+    color: rgb(34,34,34);
+    width: 78%;
+}
+
+div.custom-page-header h2 {
+    margin: 6px 0 0;
+    font-size: 24px;
+    line-height: 1.25;
+    color: rgb(119,119,119);
+    font-weight: normal;
+    letter-spacing: 0;
+    width: 78%;
+}
+
+html *.column-row, * html *.row, * html *.clearfix {
+    height: 1%;
+}
+
+*.column-row, *.row, *.clearfix {
+    display: inline-block;
+}
+
+*.column-row, *.row {
+    margin: 0 0 18px -20px;
+}
+
+*.one-third {
+    width: 300px;
+}
+
+*.column, *.columns {
+    float: left;
+    display: inline;
+    margin: 0 0 0 20px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 1;
+    margin: 3px 0 9px;
+}
+
+h1, h2, h3 {
+    letter-spacing: -1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(51,51,51);
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+/* Table Tools */
+
+table#tools {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, cite, code, img, small, 
+strike, sub, sup, tt, dd, dl, dt, fieldset, form, 
+label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: inherit;
+    text-align: left;
+}
+
+td.tool {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+td.tool .toolLabel {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+td.tool a, td.tool a:hover, td.tool a:visited {
+    color: #78AA36;
+}
+
+/* App page*/
+
+.screen-app {
+	float: left;
+	margin-right: 3em;
+	margin-bottom: 2em;
+	width: 260px;
+	height: 466px;
+}
+
+.screen-app img { 
+	width: 272px;
+	height: 466px;
+}
+
+/* Android APP Page */
+.app-logo {
+	height: 60px;
+	width: 185px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+.input-api {
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    padding: 15px 0px 15px;
+    font-weight: bold;
+	color: rgb(51,51,51);
+}
+

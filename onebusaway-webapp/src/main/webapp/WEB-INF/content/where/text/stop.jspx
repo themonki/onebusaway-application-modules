@@ -69,12 +69,35 @@ status="stopsIter"><s:property value="name" /> - <s:property value="direction" /
         	<s:set name="route" value="trip.route"/>
             <s:set name="arrivalsStatusLabelStyle" value="arrivalsAndDeparturesPresentation.getStatusLabelStyle(top)" />
             <tr class="arrivalsRow">
-                <td class="arrivalsRouteEntry"><s:url var="url" includeParams="get">
-                    <s:param name="route" value="#route.id" />
-                </s:url><s:a href="%{url}">
-                	<oba:routeName value="trip" />
-                </s:a></td>
-
+            	<s:set var="customStyleRoute">
+              		border-radius: 5px 40px 5px; 
+					background-color: #<s:property value="#route.color"/>;
+	            	color: #<s:property value="#route.textColor"/>!important;
+             	</s:set>
+             	<jsp:element name="td">
+	             	<jsp:attribute name="style">
+		              <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+		              	background-size: contain;
+		            	border-radius: 20px 5px 40px; 
+						background-color: #<s:property value="#route.color"/>;
+		            	color: #<s:property value="#route.textColor"/>!important;
+		              </s:if>
+		              </jsp:attribute>
+	             	<jsp:attribute name="class">
+	             		arrivalsStatusEntry
+	             	</jsp:attribute>
+					<s:url var="url" includeParams="get">
+                    	<s:param name="route" value="#route.id" />
+                	</s:url>
+	                <s:if test="%{#route.color != null &amp;&amp; #route.textColor != null}">
+		              <s:set var="textColor">
+		              	color: #<s:property value="#route.textColor"/>!important;
+		              </s:set>
+		            </s:if>
+					<s:a href="%{url}" cssStyle="%{textColor}">
+	                	<oba:routeName value="trip" />
+	                </s:a>
+				</jsp:element>
                 <jsp:element name="td">
                 <jsp:attribute name="class">
                     arrivalsStatusEntry

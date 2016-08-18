@@ -17,23 +17,24 @@
 
 -->
 <html xmlns:jsp="http://java.sun.com/JSP/Page"
-    xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:s="/struts-tags">
+    xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:s="/struts-tags" xmlns:oba="/oba-tags">
 <jsp:directive.page contentType="text/html" />
 <head>
 <title>User Info</title>
 </head>
 <body>
-
-<s:push value="model">
+<!-- <s:push value="model"> -->
 
 <h2>User Info</h2>
+
+<h3>Id: <s:property value="userId" /></h3>
 
 <div>
 <h4>Privacy Settings</h4>
 
 <p><span class="label">Current Settings:</span> <s:if
     test="rememberPreferencesEnabled">Preferences <span
-        class="bold">ARE</span> saved</s:if> <s:else>Prefenences <span
+        class="bold">ARE</span> saved</s:if> <s:else>Preferences <span
         class="bold">ARE NOT</span> saved</s:else></p>
 
 <h4>Default Search Location</h4>
@@ -77,7 +78,7 @@
     <li><s:a href="%{deleteUserUrl}">Delete</s:a></li>
 </ul>
 
-</s:push>
+<!-- </s:push> -->
 
 </body>
 </html>

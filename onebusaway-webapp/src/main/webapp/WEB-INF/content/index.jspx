@@ -25,7 +25,14 @@
 </head>
 <body>
 
-<wiki:wiki name="Index" />
+<s:set var="index_override" value="#configuration['webapp_index_override']"/>
+<s:if test="#index_override != null">
+    <c:set var="index_override"><s:property value="#index_override"/></c:set>
+    <jsp:include page="${index_override}"/>
+</s:if>
+<s:else>
+	<wiki:wiki name="Index" />
+</s:else>
 
 </body>
 </html>
